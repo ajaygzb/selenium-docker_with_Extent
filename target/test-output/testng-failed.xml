@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [search-module]">
+  <listeners>
+    <listener class-name="Listeners.AnnotationTransformer"/>
+    <listener class-name="Listeners.TestListener"/>
+  </listeners>
+  <test name="search-test-java(failed)">
+    <parameter name="keyword" value="java"/>
+    <classes>
+      <class name="com.searchmodule.tests.SearchTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="setupDriver"/>
+          <include name="searchfailuretest" invocation-numbers="0 0"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- com.searchmodule.tests.SearchTest -->
+    </classes>
+  </test> <!-- search-test-java(failed) -->
+</suite> <!-- Failed suite [search-module] -->

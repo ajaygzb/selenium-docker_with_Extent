@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="1" ignored="0" total="3" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="search-module" duration-ms="22139" started-at="2020-06-01T14:13:24Z" finished-at="2020-06-01T14:13:47Z">
+    <groups>
+    </groups>
+    <test name="search-test-java" duration-ms="22139" started-at="2020-06-01T14:13:24Z" finished-at="2020-06-01T14:13:47Z">
+      <class name="com.searchmodule.tests.SearchTest">
+        <test-method status="PASS" signature="setupDriver(org.testng.ITestContext)[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="setupDriver" is-config="true" duration-ms="10782" started-at="2020-06-01T19:43:24Z" finished-at="2020-06-01T19:43:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1bdf8190]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-01T19:43:35Z" finished-at="2020-06-01T19:43:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.search(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="search(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="search" duration-ms="5455" started-at="2020-06-01T19:43:35Z" description="Search functionality on Duck Duck go Website" finished-at="2020-06-01T19:43:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[java]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.search(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-06-01T19:43:41Z" finished-at="2020-06-01T19:43:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.searchfailuretest(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="SKIP" signature="searchfailuretest(java.lang.String, java.lang.reflect.Method)[pri:1, instance:com.searchmodule.tests.SearchTest@725bef66]" name="searchfailuretest" duration-ms="1624" started-at="2020-06-01T19:43:41Z" description="Search functionality on Duck Duck go Website" finished-at="2020-06-01T19:43:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[java]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.searchfailuretest(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.searchmodule.tests.SearchTest.searchfailuretest(SearchTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.TestNG.privateMain(TestNG.java:1434)
+	at org.testng.TestNG.main(TestNG.java:1403)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchfailuretest -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-06-01T19:43:43Z" finished-at="2020-06-01T19:43:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.searchfailuretest(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="searchfailuretest(java.lang.String, java.lang.reflect.Method)[pri:1, instance:com.searchmodule.tests.SearchTest@725bef66]" name="searchfailuretest" duration-ms="2372" started-at="2020-06-01T19:43:43Z" description="Search functionality on Duck Duck go Website" finished-at="2020-06-01T19:43:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[java]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.searchmodule.tests.SearchTest.searchfailuretest(java.lang.String,java.lang.reflect.Method)]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.searchmodule.tests.SearchTest.searchfailuretest(SearchTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.TestNG.privateMain(TestNG.java:1434)
+	at org.testng.TestNG.main(TestNG.java:1403)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchfailuretest -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.searchmodule.tests.SearchTest@725bef66]" name="quitDriver" is-config="true" duration-ms="1049" started-at="2020-06-01T19:43:46Z" finished-at="2020-06-01T19:43:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- com.searchmodule.tests.SearchTest -->
+    </test> <!-- search-test-java -->
+  </suite> <!-- search-module -->
+</testng-results>
