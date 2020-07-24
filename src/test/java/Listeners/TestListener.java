@@ -1,9 +1,12 @@
 package Listeners;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.tests.BaseTest;
 
 import helper.ExtentManager;
 import helper.ExtentTestManager;
+
+import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,14 +25,16 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onStart(ITestContext iTestContext) {
         System.out.println("I am in onStart method " + iTestContext.getName());
         iTestContext.setAttribute("WebDriver", this.driver);
+       
     }
  
     @Override
     public void onFinish(ITestContext iTestContext) {
         System.out.println("I am in onFinish method " + iTestContext.getName());
         //Do tier down operations for extentreports reporting!
-        ExtentTestManager.endTest();
-        ExtentManager.getReporter().flush();
+       // ExtentManager.getReporter().flush();
+       // ExtentTestManager.endTest();
+       
     }
  
     @Override
@@ -41,7 +46,7 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
         //ExtentReports log operation for passed tests.
-        ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
+        ExtentTestManager.getTest().log(Status.PASS, "Test passed");
     }
  
     @Override
@@ -57,15 +62,20 @@ public class TestListener extends BaseTest implements ITestListener {
             getScreenshotAs(OutputType.BASE64);
  
         //ExtentReports log and screenshot operations for failed tests.
-        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
-            ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+        try {
+			ExtentTestManager.getTest().log(Status.FAIL, "details", 
+			MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
  
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
         //ExtentReports log operation for skipped tests.
-        ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+        ExtentTestManager.getTest().log(Status.SKIP, "Test Skipped");
     }
  
     @Override

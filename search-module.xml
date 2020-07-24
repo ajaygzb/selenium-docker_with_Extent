@@ -1,40 +1,67 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="search-module" >
-<!-- thread-count="4" parallel="tests" -->
-    
-    <listeners>
+
+<suite name="search-module" thread-count="2" parallel="tests"> 
+
+
+	<listeners>
 		<!-- <listener class-name="Listeners.ExtentReporterNG" /> -->
-		 <listener class-name="Listeners.AnnotationTransformer"/>
-		 <listener class-name="Listeners.TestListener"/>
+		<listener class-name="Listeners.AnnotationTransformer" />
+		<listener class-name="Listeners.TestListener" />
 	</listeners>
-   
-    <test name="search-test-java">
-        <parameter name="keyword" value="java" />
-        <classes>
-            <class name="com.searchmodule.tests.SearchTest" />
-        </classes>
-     </test>
-  <!--  
-   <test name="search-test-webdriver">
-        <parameter name="keyword" value="webdriver" />
-        <classes>
-            <class name="com.searchmodule.tests.SearchTest" />
-        </classes>
-    </test>
-   
-    <test name="search-test-docker">
-        <parameter name="keyword" value="docker" />
-        <classes>
-            <class name="com.searchmodule.tests.SearchTest" />
-        </classes>
-    </test>
-   
-    <test name="search-test-kubernetes">
-        <parameter name="keyword" value="kubernetes" />
-        <classes>
-            <class name="com.searchmodule.tests.SearchTest" />
-        </classes>
-    </test> -->
+
+
+	<test name="search-test-java">
+		<parameter name="browser" value="firefox" />
+		<parameter name="keyword" value="java" />
+		<classes>
+			<class name="com.searchmodule.tests.SearchTest" />
+		</classes>
+	</test>
+	
+	<test name="search-test-java2">
+		<parameter name="browser" value="chrome" />
+		<parameter name="keyword" value="java" />
+		<classes>
+			<class name="com.searchmodule.tests.SearchTest" />
+		</classes>
+	</test>
+	
+	<test name="search-test-java3">
+		<parameter name="browser" value="firefox" />
+		<parameter name="keyword" value="java" />
+		<classes>
+			<class name="com.searchmodule.tests.SearchTest" />
+		</classes>
+	</test>
+	
+	<test name="search-test-java4">
+		<parameter name="browser" value="chrome" />
+		<parameter name="keyword" value="java" />
+		<classes>
+			<class name="com.searchmodule.tests.SearchTest" />
+		</classes>
+	</test>
+	
+		<test name="search-test-java5">
+		<!-- <parameter name="browser" value="chrome" /> -->
+		<parameter name="keyword" value="java" />
+		<classes>
+			<class name="com.searchmodule.tests.SearchTest" />
+		</classes>
+	</test>
+		</suite>
+		
+
+		
+	
+
+	<!-- <test name="search-test-webdriver"> <parameter name="keyword" value="webdriver" 
+		/> <classes> <class name="com.searchmodule.tests.SearchTest" /> </classes> 
+		</test> <test name="search-test-docker"> <parameter name="keyword" value="docker" 
+		/> <classes> <class name="com.searchmodule.tests.SearchTest" /> </classes> 
+		</test> <test name="search-test-kubernetes"> <parameter name="keyword" value="kubernetes" 
+		/> <classes> <class name="com.searchmodule.tests.SearchTest" /> </classes> 
+		</test> -->
 
 
 
@@ -45,5 +72,3 @@
 
 
 
-
-</suite>
