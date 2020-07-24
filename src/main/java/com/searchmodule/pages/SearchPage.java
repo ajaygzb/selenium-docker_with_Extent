@@ -33,8 +33,9 @@ public class SearchPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void goTo(){
-        this.driver.get("https://duckduckgo.com/");
+    public void goTo(String url){
+       // this.driver.get("https://duckduckgo.com/");
+    	this.driver.get(url);
     }
 
     public void doSearch(String keyword){

@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -18,9 +19,14 @@ import helper.ExtentManager;
 import helper.ExtentTestManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -28,6 +34,8 @@ public class BaseTest {
     public WebDriver driver;
     public static String Browsername;
     public Test test;
+    public static Properties prop;
+    public static File file;
     @Parameters({"browser"})
     @BeforeTest
     public void setupDriver(ITestContext ctx,@Optional("chrome")String browser) throws MalformedURLException {
@@ -36,6 +44,27 @@ public class BaseTest {
 
     	String host = "localhost";
         DesiredCapabilities dc;
+        file = new File(System.getProperty("user.dir")+File.separator +"src"+ File.separator +"test"+ File.separator +"java"+ File.separator +"helper"+ File.separator +"config.properties");
+        FileInputStream fileInput = null;
+		try {
+			fileInput = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		prop = new Properties();
+		//load properties file
+				try {
+					prop.load(fileInput);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        
+        
+        
+        
+        
+        
+        
 
         if(System.getProperty("BROWSER") != null &&
                 System.getProperty("BROWSER").equalsIgnoreCase("firefox")){
@@ -85,9 +114,10 @@ public class BaseTest {
         return driver;
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void quitDriver(){
-        this.driver.quit();
+		this.driver.quit();
+		System.out.println("Clean up activity: Closed all browser instances..");
     }
     
 	

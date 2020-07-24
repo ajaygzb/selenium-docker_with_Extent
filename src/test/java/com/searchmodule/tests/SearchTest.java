@@ -14,14 +14,14 @@ import org.testng.annotations.Test;
 
 public class SearchTest extends BaseTest {
 
-
+	public SearchPage searchPage;
 
 	@Test(testName="SearchTest001",priority = 1, description = "TC_001 Search functionality on Duck Duck go Website")
 	@Parameters({"keyword"})
 	public void search(String keyword,Method method){
 		//ExtentReports Description
-		SearchPage searchPage = new SearchPage(driver);
-		searchPage.goTo();
+		searchPage = new SearchPage(driver);
+		searchPage.goTo(prop.getProperty("url"));
 		ExtentTestManager.getTest().log(Status.INFO, "Open URL");
 		searchPage.doSearch(keyword);
 		searchPage.goToVideos();
@@ -33,8 +33,8 @@ public class SearchTest extends BaseTest {
 	@Test(testName="FailedSearchTest",priority = 0, description = "TC_002 Test Search functionality on Duck Duck go Website")
 	@Parameters({"keyword"})
 	public void searchfailuretest(String keyword,Method method){
-		SearchPage searchPage = new SearchPage(driver);
-		searchPage.goTo();
+		searchPage = new SearchPage(driver);
+		searchPage.goTo(prop.getProperty("url"));
 		ExtentTestManager.getTest().log(Status.INFO, "Open URL");
 		searchPage.doSearch(keyword);
 		searchPage.goToVideos();
